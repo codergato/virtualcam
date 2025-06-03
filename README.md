@@ -2,7 +2,21 @@ Intercepts your camera and creates a virtual camera that uses AI to remove the b
 
 Instructions:
 
-sudo apt install v4l2loopback-dkms v4l2loopback-utils  # virtual‑camera kernel module
-python3 -m pip install torch torchvision opencv-python pyvirtualcam pillow numpy
+# Install dependencies (no pyvirtualcam)
+pip install torch torchvision opencv-python pillow numpy
 
-./run.sh optional_background_file.png
+# For Apple Silicon Macs, use MPS acceleration
+pip install torch torchvision torchaudio
+
+brew install --cask obs
+
+python3 virtualcam.py
+
+q to quit
+s to save current frame
+1-4 to switch background modes
+
+Start OBS Virtual Camera
+Add OBS source - screen capture - choose program window 
+
+./run.sh 
